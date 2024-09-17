@@ -27,6 +27,7 @@ string trim(const string& str) {
 	return str.substr(first, (last - first + 1));			// return string between those indices
 }
 
+// Read student names from given plaintext data file into a vector
 vector<STUDENT_DATA> read_names(string file_name) {
 	ifstream input_file(file_name);
 	string line = "";
@@ -45,6 +46,7 @@ vector<STUDENT_DATA> read_names(string file_name) {
 				// Remove any leading or trailing whitespace from each name
 				student.last_name = trim(student.last_name);
 				student.first_name = trim(student.first_name);
+
 				all_students.push_back(student);
 			}
 		}
@@ -59,6 +61,7 @@ int main() {
 // Using NDEBUG because it's standardized for C/C++, not relying on Visual Studio.
 // See: https://github.com/microsoft/qsharp-runtime/issues/600
 #if !defined(NDEBUG)
+	// DEBUG: print all student information to stdout
 	for (const auto& student : all_students) {
 		cout << student.last_name << ", " << student.first_name << endl;
 	}
