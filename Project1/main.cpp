@@ -56,6 +56,14 @@ vector<STUDENT_DATA> read_names(string file_name) {
 int main() {
 	vector<STUDENT_DATA> all_students = read_names(NAMES_FILE);
 
+// Using NDEBUG because it's standardized for C/C++, not relying on Visual Studio.
+// See: https://github.com/microsoft/qsharp-runtime/issues/600
+#if !defined(NDEBUG)
+	for (const auto& student : all_students) {
+		cout << student.last_name << ", " << student.first_name << endl;
+	}
+#endif
+
 	return 1;
 }
 
