@@ -76,7 +76,7 @@ vector<STUDENT_DATA> read_student_data(string file_name) {
 };
 
 int main() {
-	cout << "Running pre-release version" << endl;
+	cout << "Running standard version" << endl;
 
 #ifdef PRE_RELEASE
 	vector<STUDENT_DATA> all_students = read_student_data(EMAILS_FILE);
