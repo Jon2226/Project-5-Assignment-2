@@ -56,6 +56,8 @@ vector<STUDENT_DATA> read_names(string file_name) {
 };
 
 int main() {
+	cout << "Running standard version" << endl;
+
 	vector<STUDENT_DATA> all_students = read_names(NAMES_FILE);
 
 // Using NDEBUG because it's standardized for C/C++, not relying on Visual Studio.
