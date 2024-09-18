@@ -55,7 +55,7 @@ STUDENT_DATA read_line(string line) {
 }
 
 // Read student names from given plaintext data file into a vector
-vector<STUDENT_DATA> read_names(string file_name) {
+vector<STUDENT_DATA> read_student_data(string file_name) {
 	ifstream input_file(file_name);
 	string line = "";
 	vector<STUDENT_DATA> all_students;
@@ -79,9 +79,9 @@ int main() {
 	cout << "Running pre-release version" << endl;
 
 #ifdef PRE_RELEASE
-	vector<STUDENT_DATA> all_students = read_names(EMAILS_FILE);
+	vector<STUDENT_DATA> all_students = read_student_data(EMAILS_FILE);
  #else
-	vector<STUDENT_DATA> all_students = read_names(NAMES_FILE);
+	vector<STUDENT_DATA> all_students = read_student_data(NAMES_FILE);
  #endif
 
 // Using NDEBUG because it's standardized for C/C++ (doesn't specifically depend on Visual Studio).
